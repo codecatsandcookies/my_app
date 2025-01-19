@@ -5,16 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6520128-20ee-4e58-a69b-6bbaeae3a7ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/controller/CheckoutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dto/Purchase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dto/PurchaseResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Address.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/OrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/service/CheckoutService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/service/CheckoutServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +125,7 @@
       <workItem from="1737143436679" duration="305000" />
       <workItem from="1737223265945" duration="344000" />
       <workItem from="1737232909086" duration="3945000" />
-      <workItem from="1737265841337" duration="3433000" />
+      <workItem from="1737265841337" duration="3758000" />
     </task>
     <servers />
   </component>
