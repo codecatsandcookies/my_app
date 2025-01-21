@@ -5,21 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6520128-20ee-4e58-a69b-6bbaeae3a7ab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/config/CorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/config/MyDataRestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/config/MyDataRestConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/controller/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/controller/CheckoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/CountryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/ProductCategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/ProductCategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/StateRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/StateRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dto/PurchaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dto/PurchaseResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/service/CheckoutServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/service/CheckoutServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/config/MyDataRestConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/config/MyDataRestConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/controller/CheckoutController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/controller/CheckoutController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/dto/PurchaseResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/dto/PurchaseResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/service/CheckoutServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/service/CheckoutServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,6 +150,7 @@
       <workItem from="1737396942626" duration="1120000" />
       <workItem from="1737412548496" duration="2230000" />
       <workItem from="1737424341725" duration="256000" />
+      <workItem from="1737435514157" duration="1342000" />
     </task>
     <servers />
   </component>
