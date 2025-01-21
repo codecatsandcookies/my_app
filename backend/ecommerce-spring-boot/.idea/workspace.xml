@@ -5,9 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6520128-20ee-4e58-a69b-6bbaeae3a7ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/config/MyDataRestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/config/MyDataRestConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/CountryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/ProductCategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/ProductCategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/StateRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dao/StateRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dto/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dto/Purchase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dto/PurchaseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/dto/PurchaseResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/ProductCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/ProductCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/entity/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/service/CheckoutServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webapp/ecommerce_spring_boot/service/CheckoutServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/EcommerceSpringBootApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/config/MyDataRestConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/config/MyDataRestConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/dao/CountryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/dao/CustomerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/dao/ProductCategoryRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/dao/ProductRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/dao/StateRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/dto/Purchase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/dto/Purchase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/dto/PurchaseResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/entity/Address.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/entity/Country.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/entity/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/entity/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/entity/OrderItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/entity/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/entity/ProductCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/entity/State.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/service/CheckoutServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/webapp/ecommerce_spring_boot/service/CheckoutServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +100,7 @@
   &quot;keyToString&quot;: {
     &quot;HTTP Request.All in generated-requests.executor&quot;: &quot;Run&quot;,
     &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -75,7 +116,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -91,6 +132,9 @@
     <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#3" index="3" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="EcommerceSpringBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ecommerce-spring-boot" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.webapp.ecommerce_spring_boot.EcommerceSpringBootApplication" />
@@ -100,6 +144,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #3" />
         <item itemvalue="HTTP Request.generated-requests | #1" />
         <item itemvalue="HTTP Request.All in generated-requests" />
       </list>
@@ -151,6 +196,11 @@
       <workItem from="1737412548496" duration="2230000" />
       <workItem from="1737424341725" duration="256000" />
       <workItem from="1737435514157" duration="1342000" />
+      <workItem from="1737456871225" duration="1090000" />
+      <workItem from="1737472930175" duration="1139000" />
+      <workItem from="1737495367701" duration="179000" />
+      <workItem from="1737495967551" duration="3387000" />
+      <workItem from="1737499908072" duration="366000" />
     </task>
     <servers />
   </component>

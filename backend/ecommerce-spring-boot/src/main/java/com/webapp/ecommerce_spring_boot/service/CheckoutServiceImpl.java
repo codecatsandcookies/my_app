@@ -41,6 +41,17 @@ public class CheckoutServiceImpl implements CheckoutService {
 
         // populate customer with order
         Customer customer = purchase.getCustomer();
+
+        // check if this is an existing customer
+        String theEmail = customer.getEmail();
+
+        Customer customerFromDB = customerRepository.findByEmail(theEmail);
+
+        if (customerFromDB != null) {
+            // we found them ... let's assign them accordingly
+            customer = customerFromDB;
+        }
+
         customer.add(order);
 
         // save to the database
@@ -52,6 +63,9 @@ public class CheckoutServiceImpl implements CheckoutService {
 
     private String generateOrderTrackingNumber() {
 
+        // generate a random UUID number (UUID version-4)
+        // For details see: https://en.wikipedia.org/wiki/Universally_unique_identifier
+        //
         return UUID.randomUUID().toString();
     }
 }
