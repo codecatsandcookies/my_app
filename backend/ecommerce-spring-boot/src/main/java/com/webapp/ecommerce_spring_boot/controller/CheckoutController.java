@@ -3,7 +3,6 @@ package com.webapp.ecommerce_spring_boot.controller;
 import com.webapp.ecommerce_spring_boot.dto.Purchase;
 import com.webapp.ecommerce_spring_boot.dto.PurchaseResponse;
 import com.webapp.ecommerce_spring_boot.service.CheckoutService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin("http://localhost:4200")
@@ -17,7 +16,6 @@ public class CheckoutController {
         this.checkoutService = checkoutService;
     }
 
-
     @PostMapping("/purchase")
     public PurchaseResponse placeOrder(@RequestBody Purchase purchase) {
 
@@ -25,7 +23,5 @@ public class CheckoutController {
 
         return purchaseResponse;
     }
-
-
 
 }

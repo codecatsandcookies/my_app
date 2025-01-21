@@ -1,0 +1,20 @@
+POST http://localhost:8080/api/checkout/purchase
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-20T165258.400.json
+
+###
+
+POST http://localhost:8080/api/checkout/purchase
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-01-20T165226.400.json
+
+###
+

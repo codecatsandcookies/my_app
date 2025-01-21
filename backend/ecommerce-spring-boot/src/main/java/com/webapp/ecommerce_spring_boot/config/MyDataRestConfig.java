@@ -32,22 +32,21 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
 
-        HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE};
+        HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PATCH};
 
-        // disable HTTP methods for Product: PUT, POST and DELETE
-        disabledHttpMethods(Product.class, config, theUnsupportedActions);
-        disabledHttpMethods(ProductCategory.class, config, theUnsupportedActions);
-        disabledHttpMethods(Country.class, config, theUnsupportedActions);
-        disabledHttpMethods(State.class, config, theUnsupportedActions);
-
+        // disable HTTP methods for ProductCategory: PUT, POST and DELETE
+        disableHttpMethods(Product.class, config, theUnsupportedActions);
+        disableHttpMethods(ProductCategory.class, config, theUnsupportedActions);
+        disableHttpMethods(Country.class, config, theUnsupportedActions);
+        disableHttpMethods(State.class, config, theUnsupportedActions);
 
         // call an internal helper method
         exposeIds(config);
     }
 
-    private static void disabledHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {
+    private void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {
         config.getExposureConfiguration()
-                .forDomainType(Product.class)
+                .forDomainType(theClass)
                 .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
     }

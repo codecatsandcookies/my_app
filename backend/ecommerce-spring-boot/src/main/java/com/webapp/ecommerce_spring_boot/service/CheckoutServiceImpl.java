@@ -6,10 +6,8 @@ import com.webapp.ecommerce_spring_boot.dto.PurchaseResponse;
 import com.webapp.ecommerce_spring_boot.entity.Customer;
 import com.webapp.ecommerce_spring_boot.entity.Order;
 import com.webapp.ecommerce_spring_boot.entity.OrderItem;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.util.Set;
 import java.util.UUID;
 
@@ -18,7 +16,6 @@ public class CheckoutServiceImpl implements CheckoutService {
 
     private CustomerRepository customerRepository;
 
-    @Autowired
     public CheckoutServiceImpl(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
@@ -55,9 +52,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 
     private String generateOrderTrackingNumber() {
 
-        // generate a random UUID number
         return UUID.randomUUID().toString();
-
     }
 }
 
