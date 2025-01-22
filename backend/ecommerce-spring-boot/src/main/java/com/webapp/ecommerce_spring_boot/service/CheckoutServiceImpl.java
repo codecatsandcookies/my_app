@@ -48,7 +48,7 @@ public class CheckoutServiceImpl implements CheckoutService {
         Customer customerFromDB = customerRepository.findByEmail(theEmail);
 
         if (customerFromDB != null) {
-            // we found them ... let's assign them accordingly
+            // we found them
             customer = customerFromDB;
         }
 
