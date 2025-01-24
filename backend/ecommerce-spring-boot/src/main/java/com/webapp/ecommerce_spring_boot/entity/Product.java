@@ -58,4 +58,6 @@ public class Product {
     @Column(name = "last_updated")
     @UpdateTimestamp
     private Date lastUpdated;
+
+
 }

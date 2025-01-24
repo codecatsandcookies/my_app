@@ -6,8 +6,8 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "address")
-@Getter
-@Setter
+//@Getter
+//@Setter
 public class Address {
 
     @Id
@@ -33,4 +33,6 @@ public class Address {
     @OneToOne
     @PrimaryKeyJoinColumn
     private Order order;
+
+
 }

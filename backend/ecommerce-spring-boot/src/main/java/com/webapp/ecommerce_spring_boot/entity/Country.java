@@ -9,8 +9,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "country")
-@Getter
-@Setter
+//@Getter
+//@Setter
 public class Country {
 
     @Id
@@ -27,5 +27,6 @@ public class Country {
     @OneToMany(mappedBy = "country")
     @JsonIgnore
     private List<State> states;
+
 
 }
