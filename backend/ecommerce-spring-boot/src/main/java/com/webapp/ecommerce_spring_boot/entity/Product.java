@@ -17,7 +17,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "product")
+@Table(name="product")
 @Data
 public class Product {
 
@@ -58,6 +58,4 @@ public class Product {
     @Column(name = "last_updated")
     @UpdateTimestamp
     private Date lastUpdated;
-
-
 }

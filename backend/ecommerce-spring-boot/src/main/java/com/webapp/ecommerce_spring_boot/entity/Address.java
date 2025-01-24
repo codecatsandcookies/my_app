@@ -6,8 +6,8 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "address")
-//@Getter
-//@Setter
+@Getter
+@Setter
 public class Address {
 
     @Id

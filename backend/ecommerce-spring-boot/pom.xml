@@ -21,11 +21,7 @@
 
 	<dependencies>
 
-		<dependency>
-			<groupId>com.okta.spring</groupId>
-			<artifactId>okta-spring-security-oauth2</artifactId>
-			<version>3.0.2</version> <!-- Use the latest version -->
-		</dependency>
+
 
 		<dependency>
 			<groupId>jakarta.servlet</groupId>
@@ -33,6 +29,7 @@
 			<version>6.0.0</version> <!-- Match your Spring Boot version -->
 			<scope>provided</scope>
 		</dependency>
+
 
 
 		<dependency>
@@ -48,6 +45,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.33</version> <!-- Use the latest version -->
 		</dependency>
+
 
 
 		<dependency>

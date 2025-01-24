@@ -9,8 +9,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "country")
-//@Getter
-//@Setter
+@Getter
+@Setter
 public class Country {
 
     @Id

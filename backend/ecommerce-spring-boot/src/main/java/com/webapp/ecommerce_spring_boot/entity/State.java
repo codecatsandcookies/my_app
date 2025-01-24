@@ -5,7 +5,7 @@ import lombok.Data;
 
 
 @Entity
-@Table(name = "state")
+@Table(name="state")
 @Data
 public class State {
 
@@ -20,6 +20,5 @@ public class State {
     @ManyToOne
     @JoinColumn(name="country_id")
     private Country country;
-
 
 }
