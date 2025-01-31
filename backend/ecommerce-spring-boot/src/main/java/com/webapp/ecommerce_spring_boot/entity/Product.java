@@ -58,4 +58,8 @@ public class Product {
     @Column(name = "last_updated")
     @UpdateTimestamp
     private Date lastUpdated;
+
+    public void decreaseStock(int quantity) {
+        this.unitsInStock -= quantity;
+    }
 }

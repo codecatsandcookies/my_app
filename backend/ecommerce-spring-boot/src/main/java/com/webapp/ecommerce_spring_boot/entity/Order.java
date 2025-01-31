@@ -38,6 +38,7 @@ public class Order {
 
     @Column(name="date_created")
     @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private Date dateCreated;
 
     @Column(name="last_updated")
@@ -58,6 +59,11 @@ public class Order {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "billing_address_id", referencedColumnName = "id")
     private Address billingAddress;
+
+    @PrePersist
+    protected void onCreate() {
+        dateCreated = new Date();
+    }
 
     public void add(OrderItem item) {
 

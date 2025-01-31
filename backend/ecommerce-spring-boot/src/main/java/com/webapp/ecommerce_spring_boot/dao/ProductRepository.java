@@ -5,6 +5,8 @@ import com.webapp.ecommerce_spring_boot.entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,4 +19,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     Page<Product> findByNameContaining(@Param("name") String name, Pageable pageable);
 
+    @Modifying
+    @Query("UPDATE Product p SET p.unitsInStock = p.unitsInStock - :quantity WHERE p.id = :productId")
+    void updateStock(@Param("productId") Long productId, @Param("quantity") int quantity);
 }

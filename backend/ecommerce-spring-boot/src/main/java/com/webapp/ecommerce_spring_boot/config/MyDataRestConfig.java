@@ -30,43 +30,46 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
 
-        HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PATCH};
+        HttpMethod[] theUnsupportedActions = {};
 
-        // disable HTTP methods for ProductCategory: PUT, POST and DELETE
-        disableHttpMethods(Product.class, config, theUnsupportedActions);
-        disableHttpMethods(ProductCategory.class, config, theUnsupportedActions);
-        disableHttpMethods(Country.class, config, theUnsupportedActions);
-        disableHttpMethods(State.class, config, theUnsupportedActions);
+        // Allow HTTP methods for Product with full CRUD support
+        enableHttpMethods(Product.class, config);
+
+        // Restrict ProductCategory, Country, and State
+        HttpMethod[] restrictedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PATCH};
+        disableHttpMethods(ProductCategory.class, config, restrictedActions);
+        disableHttpMethods(Country.class, config, restrictedActions);
+        disableHttpMethods(State.class, config, restrictedActions);
 
         // call an internal helper method
         exposeIds(config);
     }
 
-    private void disableHttpMethods(Class theClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {
+
+
+    private void disableHttpMethods(Class<?> theClass, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedActions) {
         config.getExposureConfiguration()
                 .forDomainType(theClass)
-                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
-                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
+                .withItemExposure((metadata, httpMethods) -> httpMethods.disable(theUnsupportedActions))
+                .withCollectionExposure((metadata, httpMethods) -> httpMethods.disable(theUnsupportedActions));
+    }
+
+    private void enableHttpMethods(Class<?> theClass, RepositoryRestConfiguration config) {
+        config.getExposureConfiguration()
+                .forDomainType(theClass)
+                .withItemExposure((metadata, httpMethods) -> httpMethods.enable(HttpMethod.values()))
+                .withCollectionExposure((metadata, httpMethods) -> httpMethods.enable(HttpMethod.values()));
     }
 
     private void exposeIds(RepositoryRestConfiguration config) {
-
-        // expose entity ids
-        //
-
-        // - get a list of all entity classes from the entity manager
         Set<EntityType<?>> entities = entityManager.getMetamodel().getEntities();
+        List<Class<?>> entityClasses = new ArrayList<>();
 
-        // - create an array of the entity types
-        List<Class> entityClasses = new ArrayList<>();
-
-        // - get the entity types for the entities
-        for (EntityType tempEntityType : entities) {
-            entityClasses.add(tempEntityType.getJavaType());
+        for (EntityType<?> entityType : entities) {
+            entityClasses.add(entityType.getJavaType());
         }
 
-        // - expose the entity ids for the array of entity/domain types
-        Class[] domainTypes = entityClasses.toArray(new Class[0]);
+        Class<?>[] domainTypes = entityClasses.toArray(new Class[0]);
         config.exposeIdsFor(domainTypes);
     }
 }

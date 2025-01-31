@@ -12,7 +12,7 @@ import { ProductService } from '../../services/product.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  product: Product = new Product();
+  product!: Product;  // Ensure it is properly declared
 
   constructor(private productService: ProductService,
               private cartService: CartService,
@@ -25,24 +25,29 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   handleProductDetails() {
+    // get the "id" param string. convert string to a number using "+"
+    const theProductId: number = Number(this.route.snapshot.paramMap.get('id'));
 
-    // get the "id" param string. convert string to a number using the "+" symbol
-    const theProductId: number = +this.route.snapshot.paramMap.get('id')!;
-
-    this.productService.getProduct(theProductId).subscribe(
-      data => {
-        this.product = data;
-      }
-    )
+    if (!isNaN(theProductId)) {
+      this.productService.getProduct(theProductId).subscribe(
+        data => {
+          this.product = data;
+        }
+      );
+    }
   }
 
   addToCart() {
-
-    console.log(`Adding to cart: ${this.product.name}, ${this.product.unitPrice}`);
-    let theCartItem = new CartItem(this.product.id, this.product.name, this.product.imageUrl, this.product.unitPrice);
-    
-    this.cartService.addToCart(theCartItem);
-    
+    if (this.product) {
+      const cartItem = new CartItem({
+        id: this.product.id!,
+        name: this.product.name!,
+        imageUrl: this.product.imageUrl!,
+        unitPrice: this.product.unitPrice!,
+        unitsInStock: this.product.unitsInStock!
+      });
+      this.cartService.addToCart(cartItem);
+    }
   }
 
 }
