@@ -5,7 +5,6 @@ import com.webapp.ecommerce_spring_boot.entity.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -19,7 +18,7 @@ import java.util.Set;
 @Configuration
 public class MyDataRestConfig implements RepositoryRestConfigurer {
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     @Autowired
     public MyDataRestConfig(EntityManager theEntityManager) {
@@ -30,19 +29,24 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
 
-        HttpMethod[] theUnsupportedActions = {};
+        HttpMethod[] restrictedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PATCH};
 
         // Allow HTTP methods for Product with full CRUD support
         enableHttpMethods(Product.class, config);
 
         // Restrict ProductCategory, Country, and State
-        HttpMethod[] restrictedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PATCH};
         disableHttpMethods(ProductCategory.class, config, restrictedActions);
         disableHttpMethods(Country.class, config, restrictedActions);
         disableHttpMethods(State.class, config, restrictedActions);
 
         // call an internal helper method
         exposeIds(config);
+
+        // Enable CORS for frontend (http://localhost:4200)
+//        cors.addMapping("/api/**") // Allow all API endpoints
+//                .allowedOrigins("http://localhost:4200") // Allow frontend requests
+//                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+//                .allowCredentials(true);
     }
 
 

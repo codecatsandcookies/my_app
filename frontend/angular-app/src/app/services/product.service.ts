@@ -76,6 +76,10 @@ export class ProductService {
     );
   }
 
+  getProductStockReport(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(`${this.baseUrl}/stock-report`);
+  }
+
 }
 
 interface GetResponseProducts {

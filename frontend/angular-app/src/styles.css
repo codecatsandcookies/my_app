@@ -4,6 +4,18 @@
  * ----------------------------
  */
 
+ internal-space {
+
+  padding-top: 20px;    /* Space above the content */
+
+  padding-bottom: 20px; /* Space below the content */
+
+  padding-left: 40px;   /* Space to the left of the content */
+
+  padding-right: 40px;  /* Space to the right of the content */
+
+}
+
 * {
   margin: 0;
   padding: 0;

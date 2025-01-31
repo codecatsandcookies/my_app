@@ -5,6 +5,7 @@ import com.webapp.ecommerce_spring_boot.dao.OrderRepository;
 import com.webapp.ecommerce_spring_boot.dao.ProductRepository;
 import com.webapp.ecommerce_spring_boot.dto.Purchase;
 import com.webapp.ecommerce_spring_boot.dto.PurchaseResponse;
+import com.webapp.ecommerce_spring_boot.entity.Customer;
 import com.webapp.ecommerce_spring_boot.entity.Order;
 import com.webapp.ecommerce_spring_boot.entity.OrderItem;
 import com.webapp.ecommerce_spring_boot.entity.Product;
@@ -35,15 +36,21 @@ public class CheckoutServiceImpl implements CheckoutService {
     @Override
     @Transactional
     public PurchaseResponse placeOrder(Purchase purchase) {
-
-        // retrieve the order info from dto
+        // Retrieve the order and customer from DTO
         Order order = purchase.getOrder();
+        Customer customer = purchase.getCustomer(); // Ensure customer is retrieved
 
-        // generate tracking number
+        // Save customer explicitly before associating with the order
+        customer = customerRepository.save(customer);
+
+        // Associate customer with the order
+        order.setCustomer(customer);
+
+        // Generate tracking number
         String orderTrackingNumber = generateOrderTrackingNumber();
         order.setOrderTrackingNumber(orderTrackingNumber);
 
-        // populate order with orderItems and decrement stock
+        // Populate order with orderItems and decrement stock
         Set<OrderItem> orderItems = purchase.getOrderItems();
         orderItems.forEach(orderItem -> {
             Product product = productRepository.findById(orderItem.getProductId())
@@ -59,11 +66,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 
         order.setOrderItems(orderItems);
 
-        // populate order with billing and shipping address
-        order.setBillingAddress(purchase.getBillingAddress());
-        order.setShippingAddress(purchase.getShippingAddress());
-
-        // save the order to the database
+        // Save the order to the database
         orderRepository.save(order);
 
         return new PurchaseResponse(orderTrackingNumber);
@@ -76,43 +79,31 @@ public class CheckoutServiceImpl implements CheckoutService {
 
     @Transactional
     public boolean cancelLatestOrder() {
-        Logger logger = LoggerFactory.getLogger(CheckoutServiceImpl.class);
-        logger.info("Attempting to cancel the latest order...");
+        Optional<Order> latestOrderOpt = orderRepository.findFirstByOrderByDateCreatedDesc();
 
-        try {
-            Optional<Order> latestOrderOpt = orderRepository.findFirstByOrderByDateCreatedDesc();
-
-            if (latestOrderOpt.isEmpty()) {
-                logger.warn("No orders available to cancel.");
-                return false;
-            }
-
-            Order latestOrder = latestOrderOpt.get();
-            logger.info("Found latest order with ID: {}", latestOrder.getId());
-
-            // Restore stock before deleting order
-            for (OrderItem orderItem : latestOrder.getOrderItems()) {
-                Product product = productRepository.findById(orderItem.getProductId())
-                        .orElseThrow(() -> new IllegalArgumentException("Product not found: " + orderItem.getProductId()));
-
-                product.setUnitsInStock(product.getUnitsInStock() + orderItem.getQuantity());
-                productRepository.save(product);
-                logger.info("Restored stock for product ID: {}, New stock: {}", product.getId(), product.getUnitsInStock());
-            }
-
-            // Delete order items before deleting order
-            latestOrder.getOrderItems().clear();
-            orderRepository.save(latestOrder);
-
-            // Delete the order
-            orderRepository.deleteById(latestOrder.getId());
-            logger.info("Order ID: {} successfully deleted.", latestOrder.getId());
-
-            return true;
-        } catch (Exception e) {
-            logger.error("Error canceling the latest order: ", e);
-            return false;
+        if (latestOrderOpt.isEmpty()) {
+            return false; // No order found
         }
+
+        Order latestOrder = latestOrderOpt.get();
+
+        // Restore stock before deleting order
+        for (OrderItem orderItem : latestOrder.getOrderItems()) {
+            Product product = productRepository.findById(orderItem.getProductId())
+                    .orElseThrow(() -> new IllegalArgumentException("Product not found: " + orderItem.getProductId()));
+
+            product.setUnitsInStock(product.getUnitsInStock() + orderItem.getQuantity());
+            productRepository.save(product);
+        }
+
+        // Remove order items
+        latestOrder.getOrderItems().clear();
+        orderRepository.save(latestOrder);
+
+        // Delete the order
+        orderRepository.delete(latestOrder);
+
+        return true;
     }
 }
 

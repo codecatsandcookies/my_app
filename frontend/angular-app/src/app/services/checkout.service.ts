@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, of, tap } from 'rxjs';
+import { catchError, Observable, of, tap, throwError } from 'rxjs';
 import { Purchase } from '../common/purchase';
 import { PurchaseResponse } from '../common/purchase-response';
 
@@ -18,12 +18,20 @@ export class CheckoutService {
   placeOrder(purchase: Purchase): Observable<PurchaseResponse> {
     return this.httpClient.post<PurchaseResponse>(this.purchaseUrl, purchase).pipe(
       tap(response => {
-        // Update stock after successful purchase
-        purchase.orderItems.forEach(item => {
-          if (item.productId) {
-            this.updateProductStock(item.productId, item.quantity);
-          }
-        });
+        if (response) {
+          console.log("Order placed successfully:", response);
+          purchase.orderItems.forEach(item => {
+            if (item.productId) {
+              this.updateProductStock(item.productId, item.quantity);
+            }
+          });
+        } else {
+          console.error("Invalid response from API.");
+        }
+      }),
+      catchError((error) => {
+        console.error("Checkout failed:", error);
+        return throwError(() => new Error("Checkout failed. Please try again."));
       })
     );
   }
