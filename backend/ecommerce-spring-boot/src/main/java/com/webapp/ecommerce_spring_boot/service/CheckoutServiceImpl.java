@@ -3,14 +3,17 @@ package com.webapp.ecommerce_spring_boot.service;
 import com.webapp.ecommerce_spring_boot.dao.CustomerRepository;
 import com.webapp.ecommerce_spring_boot.dao.OrderRepository;
 import com.webapp.ecommerce_spring_boot.dao.ProductRepository;
+import com.webapp.ecommerce_spring_boot.dao.UserRepository;
 import com.webapp.ecommerce_spring_boot.dto.Purchase;
 import com.webapp.ecommerce_spring_boot.dto.PurchaseResponse;
-import com.webapp.ecommerce_spring_boot.entity.Customer;
-import com.webapp.ecommerce_spring_boot.entity.Order;
-import com.webapp.ecommerce_spring_boot.entity.OrderItem;
-import com.webapp.ecommerce_spring_boot.entity.Product;
+import com.webapp.ecommerce_spring_boot.entity.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -23,15 +26,42 @@ import java.util.UUID;
 @Service
 public class CheckoutServiceImpl implements CheckoutService {
 
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    private Authentication getAuthentication() {
+        return SecurityContextHolder.getContext().getAuthentication();
+    }
+
+    public void placeOrder() {
+        Authentication auth = getAuthentication();
+        if (auth == null || !auth.isAuthenticated()) {
+            throw new RuntimeException("User not authenticated");
+        }
+        String username = auth.getName();
+        System.out.println("Authenticated user: " + username);
+    }
+
     private final CustomerRepository customerRepository;
     private final ProductRepository productRepository;
     private final OrderRepository orderRepository;
+    private final UserRepository userRepository;
 
-    public CheckoutServiceImpl(CustomerRepository customerRepository, ProductRepository productRepository, OrderRepository orderRepository) {
+//    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//    String userEmail = authentication.getName();
+//    User user = userRepository.findByEmail(userEmail).orElseThrow();
+
+    public CheckoutServiceImpl(CustomerRepository customerRepository, ProductRepository productRepository,
+                               OrderRepository orderRepository,
+                               UserRepository userRepository
+
+    ) {
         this.customerRepository = customerRepository;
         this.productRepository = productRepository;
         this.orderRepository = orderRepository;
+        this.userRepository = userRepository;
     }
+
 
     @Override
     @Transactional
@@ -42,6 +72,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 
         // Save customer explicitly before associating with the order
         customer = customerRepository.save(customer);
+
 
         // Associate customer with the order
         order.setCustomer(customer);

@@ -43,10 +43,10 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         exposeIds(config);
 
         // Enable CORS for frontend (http://localhost:4200)
-//        cors.addMapping("/api/**") // Allow all API endpoints
-//                .allowedOrigins("http://localhost:4200") // Allow frontend requests
-//                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-//                .allowCredentials(true);
+        cors.addMapping("/api/**") // Allow all API endpoints
+                .allowedOrigins("http://localhost:4200") // Allow frontend requests
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowCredentials(true);
     }
 
 

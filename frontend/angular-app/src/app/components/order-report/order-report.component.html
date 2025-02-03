@@ -1,20 +1,19 @@
-<h2>Order Reports</h2>
-<table>
+<h2 class="mt-5">Order Reports</h2>
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Customer Name</th>
-      <th>Order Date</th>
-      <th>Total Price</th>
+      <th scope="col" >Customer</th>
+
+      <th scope="col">Total Price</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let report of orderReports">
-      <td>{{ report.id }}</td>
+      
       <td>{{ report.customerName }}</td>
-      <td>{{ report.orderDate | date }}</td>
+
       <td>{{ report.totalPrice | currency }}</td>
     </tr>
   </tbody>
 </table>
-<button class="mb-5 mt-3" routerLink="/products">Back to Products</button>
+<button class="btn" routerLink="/products" style="color: blue">Back to Products</button>

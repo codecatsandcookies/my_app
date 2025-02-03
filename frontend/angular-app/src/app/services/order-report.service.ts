@@ -7,7 +7,7 @@ import { OrderReportDTO } from '../models/order-report-dto';
   providedIn: 'root'
 })
 export class OrderReportService {
-  private baseUrl = 'http://localhost:8080/api/orders/reports'; // ✅ Backend API
+  private baseUrl = 'http://localhost:8080/api/orders/reports'; 
 
   constructor(private http: HttpClient) {}
 
