@@ -12,7 +12,7 @@ import { ProductService } from '../../services/product.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  product!: Product;  // Ensure it is properly declared
+  product: Product | null = null; // Ensure it is properly declared
 
   constructor(private productService: ProductService,
               private cartService: CartService,

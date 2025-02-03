@@ -25,9 +25,26 @@ export class LoginComponent {
   }
 
   register() {
+    if (!this.email || !this.password) {
+      alert("Email and password are required!");
+      return;
+    }
+  
     this.authService.register(this.email, this.password).subscribe({
-      next: () => alert('User registered successfully!'),
-      error: (err) => alert('Registration failed')
+      next: (response) => {
+        console.log('Registration Success:', response);
+  
+        // 🔹 Extract the actual response message
+        let message = response.body?.message || response.body || "User registered successfully!";
+        alert(message);
+      },
+      error: (err) => {
+        console.log('Registration Error:', err);
+  
+        // 🔹 Extract error message if available
+        let errorMessage = err.error?.message || err.error || "Registration failed";
+        alert(errorMessage);
+      }
     });
   }
 }

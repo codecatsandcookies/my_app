@@ -29,8 +29,11 @@ export class AuthService {
     );
   }
 
-  register(email: string, password: string): Observable<any> {
-    return this.httpClient.post<any>(this.registerUrl, { email, password });
+  register(email: string, password: string) {
+    return this.httpClient.post<{ message: string }>('http://localhost:8080/api/auth/register', {
+      email,
+      password
+    }, { observe: 'response' }); // 👈 This will include full response details
   }
 
   isLoggedIn(): boolean {

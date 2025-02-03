@@ -1,4 +1,3 @@
-
 <!-- <div class="">
     <h2>Login</h2>
     <form (ngSubmit)="login()">
@@ -16,9 +15,10 @@
     </form>
 </div>  -->
 
-<div class="container d-flex justify-content-center align-items-center min-vh-100">
+<div
+  class="container d-flex justify-content-center align-items-center min-vh-100"
+>
   <div class="col-md-6">
-
     <!-- Login Card -->
     <div class="card mb-4 shadow">
       <div class="card-body">
@@ -26,25 +26,27 @@
         <form (ngSubmit)="login()">
           <div class="mb-3">
             <label for="loginEmail" class="form-label">Email</label>
-            <input 
-              type="email" 
-              id="loginEmail" 
-              placeholder="Email" 
-              [(ngModel)]="email" 
-              name="email" 
-              required 
-              class="form-control" />
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="Email"
+              [(ngModel)]="email"
+              name="email"
+              required
+              class="form-control"
+            />
           </div>
           <div class="mb-3">
             <label for="loginPassword" class="form-label">Password</label>
-            <input 
-              type="password" 
-              id="loginPassword" 
-              placeholder="Password" 
-              [(ngModel)]="password" 
-              name="password" 
-              required 
-              class="form-control" />
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Password"
+              [(ngModel)]="password"
+              name="password"
+              required
+              class="form-control"
+            />
           </div>
           <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
@@ -58,30 +60,31 @@
         <form (ngSubmit)="register()">
           <div class="mb-3">
             <label for="registerEmail" class="form-label">Email</label>
-            <input 
-              type="email" 
-              id="registerEmail" 
-              placeholder="Email" 
-              [(ngModel)]="email" 
-              name="email" 
-              required 
-              class="form-control" />
+            <input
+              type="email"
+              id="registerEmail"
+              placeholder="Email"
+              [(ngModel)]="email"
+              name="email"
+              required
+              class="form-control"
+            />
           </div>
           <div class="mb-3">
             <label for="registerPassword" class="form-label">Password</label>
-            <input 
-              type="password" 
-              id="registerPassword" 
-              placeholder="Password" 
-              [(ngModel)]="password" 
-              name="password" 
-              required 
-              class="form-control" />
+            <input
+              type="password"
+              id="registerPassword"
+              placeholder="Password"
+              [(ngModel)]="password"
+              name="password"
+              required
+              class="form-control"
+            />
           </div>
           <button type="submit" class="btn btn-success w-100">Register</button>
         </form>
       </div>
     </div>
-
   </div>
 </div>

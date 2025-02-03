@@ -11,6 +11,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -26,9 +28,18 @@ public class AuthService {
     }
 
     // Register a new user
-    public ResponseEntity<String> registerUser(RegisterRequest registerRequest) {
+    public ResponseEntity<Map<String, String>> registerUser(RegisterRequest registerRequest) {
+        Map<String, String> response = new HashMap<>();
+
+        if (registerRequest.getEmail() == null || registerRequest.getEmail().trim().isEmpty() ||
+                registerRequest.getPassword() == null || registerRequest.getPassword().trim().isEmpty()) {
+            response.put("message", "Email and password cannot be empty.");
+            return ResponseEntity.badRequest().body(response);
+        }
+
         if (userRepository.findByEmail(registerRequest.getEmail()).isPresent()) {
-            return ResponseEntity.badRequest().body("Email already registered.");
+            response.put("message", "Email already registered.");
+            return ResponseEntity.badRequest().body(response);
         }
 
         User newUser = new User();
@@ -37,7 +48,8 @@ public class AuthService {
         newUser.setRole(registerRequest.getRole() != null ? registerRequest.getRole() : "USER");
 
         userRepository.save(newUser);
-        return ResponseEntity.ok("User registered successfully.");
+        response.put("message", "User registered successfully.");
+        return ResponseEntity.ok(response);
     }
 
     // Login user

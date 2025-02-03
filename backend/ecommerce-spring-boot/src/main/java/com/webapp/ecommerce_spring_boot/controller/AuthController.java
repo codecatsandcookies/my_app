@@ -13,6 +13,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -36,9 +38,18 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@RequestBody RegisterRequest request) {
+    public ResponseEntity<Map<String, String>> registerUser(@RequestBody RegisterRequest request) {
+        Map<String, String> response = new HashMap<>();
+
+        if (request.getEmail() == null || request.getEmail().trim().isEmpty() ||
+                request.getPassword() == null || request.getPassword().trim().isEmpty()) {
+            response.put("message", "Email and password cannot be empty.");
+            return ResponseEntity.badRequest().body(response);
+        }
+
         if (userRepository.findByEmail(request.getEmail()).isPresent()) {
-            return ResponseEntity.badRequest().body("Email is already in use.");
+            response.put("message", "Email is already in use.");
+            return ResponseEntity.badRequest().body(response);
         }
 
         User newUser = new User();
@@ -48,6 +59,7 @@ public class AuthController {
 
         userRepository.save(newUser);
 
-        return ResponseEntity.ok("User registered successfully!");
+        response.put("message", "User registered successfully!");
+        return ResponseEntity.ok(response);
     }
 }

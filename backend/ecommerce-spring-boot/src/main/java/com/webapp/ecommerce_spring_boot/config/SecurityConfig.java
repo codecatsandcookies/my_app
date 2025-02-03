@@ -39,7 +39,12 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/**").permitAll() // Allow authentication
-                        .requestMatchers("/api/orders/checkout/**").permitAll() // Allow purchase requests temporarily
+                        .requestMatchers("/api/orders/checkout/**").permitAll()
+                        .requestMatchers("/api/").authenticated()
+                        .requestMatchers("api/products/**").authenticated()
+//                        .requestMatchers("").authenticated()
+//                        .requestMatchers("").authenticated()
+//                        .requestMatchers("").authenticated()// Allow purchase requests temporarily
                         .requestMatchers("/api/orders/**").authenticated() // Protect other order routes
                         .anyRequest().permitAll()
                 )
