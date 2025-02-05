@@ -47,9 +47,7 @@ public class CheckoutServiceImpl implements CheckoutService {
     private final OrderRepository orderRepository;
     private final UserRepository userRepository;
 
-//    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//    String userEmail = authentication.getName();
-//    User user = userRepository.findByEmail(userEmail).orElseThrow();
+
 
     public CheckoutServiceImpl(CustomerRepository customerRepository, ProductRepository productRepository,
                                OrderRepository orderRepository,
@@ -72,7 +70,6 @@ public class CheckoutServiceImpl implements CheckoutService {
 
         // Save customer explicitly before associating with the order
         customer = customerRepository.save(customer);
-
 
         // Associate customer with the order
         order.setCustomer(customer);
@@ -113,7 +110,7 @@ public class CheckoutServiceImpl implements CheckoutService {
         Optional<Order> latestOrderOpt = orderRepository.findFirstByOrderByDateCreatedDesc();
 
         if (latestOrderOpt.isEmpty()) {
-            return false; // No order found
+            return false;
         }
 
         Order latestOrder = latestOrderOpt.get();

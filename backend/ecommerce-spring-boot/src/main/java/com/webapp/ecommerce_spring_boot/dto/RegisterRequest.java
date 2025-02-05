@@ -1,12 +1,17 @@
 package com.webapp.ecommerce_spring_boot.dto;
 
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class RegisterRequest {
-    private String email; // Changed from "username" to "email"
+    private String email;
     private String password;
-    private String role; // Optional: default to "USER"
+    private String role = "USER";
 }

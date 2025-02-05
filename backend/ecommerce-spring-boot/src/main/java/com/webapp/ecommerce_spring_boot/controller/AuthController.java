@@ -6,16 +6,16 @@ import com.webapp.ecommerce_spring_boot.dto.LoginRequest;
 import com.webapp.ecommerce_spring_boot.dto.LoginResponse;
 import com.webapp.ecommerce_spring_boot.dto.RegisterRequest;
 import com.webapp.ecommerce_spring_boot.entity.User;
-import com.webapp.ecommerce_spring_boot.security.JwtUtil;
+
 import com.webapp.ecommerce_spring_boot.service.AuthService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/auth")

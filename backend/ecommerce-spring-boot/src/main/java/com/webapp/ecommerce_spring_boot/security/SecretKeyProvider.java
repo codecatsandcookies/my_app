@@ -9,7 +9,7 @@ import java.util.Base64;
 @Component
 public class SecretKeyProvider {
 
-    private static final String SECRET = "3aIV82WdBBEO3qXul+/cpRtLdy1ibTkddy/O81egxQg=";  // Replace with a strong key
+    private static final String SECRET = "3aIV82WdBBEO3qXul+/cpRtLdy1ibTkddy/O81egxQg=";
 
     private static final SecretKey SECRET_KEY = Keys.hmacShaKeyFor(Base64.getDecoder().decode(SECRET));
 

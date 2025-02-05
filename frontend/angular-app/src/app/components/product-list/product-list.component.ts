@@ -83,13 +83,7 @@ export class ProductListComponent implements OnInit {
       this.currentCategoryId = 1;
     }
 
-    //
-    // Check if we have a different category than previous
-    // Note: Angular will reuse a component if it is currently being viewed
-    //
-
-    // if we have a different category id than previous
-    // then set thePageNumber back to 1
+    
     if (this.previousCategoryId != this.currentCategoryId) {
       this.thePageNumber = 1;
     }
@@ -121,7 +115,7 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(theProduct: Product) {
-    const cartItem = new CartItem(theProduct); // Only pass one object
+    const cartItem = new CartItem(theProduct); 
     this.cartService.addToCart(cartItem);
   }
 

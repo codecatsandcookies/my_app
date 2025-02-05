@@ -12,7 +12,7 @@ import { ProductService } from '../../services/product.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  product: Product | null = null; // Ensure it is properly declared
+  product: Product | null = null; 
 
   constructor(private productService: ProductService,
               private cartService: CartService,
@@ -25,7 +25,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   handleProductDetails() {
-    // get the "id" param string. convert string to a number using "+"
+    
     const theProductId: number = Number(this.route.snapshot.paramMap.get('id'));
 
     if (!isNaN(theProductId)) {

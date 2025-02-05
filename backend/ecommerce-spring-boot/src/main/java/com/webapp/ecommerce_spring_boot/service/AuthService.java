@@ -7,7 +7,6 @@ import com.webapp.ecommerce_spring_boot.dto.RegisterRequest;
 import com.webapp.ecommerce_spring_boot.entity.User;
 import com.webapp.ecommerce_spring_boot.security.JwtUtil;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 

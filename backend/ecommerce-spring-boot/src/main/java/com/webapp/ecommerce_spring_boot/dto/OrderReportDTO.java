@@ -15,7 +15,7 @@ public class OrderReportDTO {
     private Date dateCreated;
     private BigDecimal totalPrice;
 
-    // Correct Constructor
+
     public OrderReportDTO(Long orderId, String customerName, Date dateCreated, BigDecimal totalPrice) {
         this.orderId = orderId;
         this.customerName = customerName;

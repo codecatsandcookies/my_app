@@ -16,7 +16,7 @@ export class AuthService {
     return this.httpClient.post<any>(this.loginUrl, { email, password }).pipe(
       tap(response => {
         if (response.token) {
-          console.log("Token received:", response.token); // Debugging
+          console.log("Token received:", response.token); 
           localStorage.setItem('authToken', response.token);
         } else {
           console.error("No token received in response.");
@@ -33,7 +33,7 @@ export class AuthService {
     return this.httpClient.post<{ message: string }>('http://localhost:8080/api/auth/register', {
       email,
       password
-    }, { observe: 'response' }); // 👈 This will include full response details
+    }, { observe: 'response' }); 
   }
 
   isLoggedIn(): boolean {
@@ -42,6 +42,6 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('authToken');
-    this.router.navigate(['/login']); // Redirect to login page
+    this.router.navigate(['/login']); 
   }
 }

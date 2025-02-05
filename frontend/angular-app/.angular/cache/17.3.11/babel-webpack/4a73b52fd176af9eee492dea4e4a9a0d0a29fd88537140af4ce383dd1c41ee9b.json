@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class User {}","map":{"version":3,"names":["User"],"sources":["/Users/myfolder/web_app/frontend/angular-app/src/app/common/user.ts"],"sourcesContent":["export class User {\n    username!: string;\n    password!: string;\n}\n"],"mappings":"AAAA,OAAM,MAAOA,IAAI","ignoreList":[]},"metadata":{},"sourceType":"module","externalDependencies":[]}

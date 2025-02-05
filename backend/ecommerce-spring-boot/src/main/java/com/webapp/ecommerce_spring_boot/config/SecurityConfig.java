@@ -38,14 +38,11 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/**").permitAll() // Allow authentication
+                        .requestMatchers("/api/**").permitAll()
                         .requestMatchers("/api/orders/checkout/**").permitAll()
                         .requestMatchers("/api/").authenticated()
                         .requestMatchers("api/products/**").authenticated()
-//                        .requestMatchers("").authenticated()
-//                        .requestMatchers("").authenticated()
-//                        .requestMatchers("").authenticated()// Allow purchase requests temporarily
-                        .requestMatchers("/api/orders/**").authenticated() // Protect other order routes
+                        .requestMatchers("/api/orders/**").authenticated()
                         .anyRequest().permitAll()
                 )
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

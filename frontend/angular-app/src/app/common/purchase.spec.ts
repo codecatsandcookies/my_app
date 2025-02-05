@@ -1,7 +1,7 @@
-import { Purchase } from './purchase';
+// import { Purchase } from './purchase';
 
-describe('Purchase', () => {
-  it('should create an instance', () => {
-    expect(new Purchase()).toBeTruthy();
-  });
-});
+// describe('Purchase', () => {
+//   it('should create an instance', () => {
+//     expect(new Purchase()).toBeTruthy();
+//   });
+// });

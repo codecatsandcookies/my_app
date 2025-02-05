@@ -162,14 +162,14 @@ export class CheckoutComponent implements OnInit {
       this.checkoutFormGroup.controls?.['billingAddress']
             .setValue(this.checkoutFormGroup.controls?.['shippingAddress'].value);
 
-      // bug fix for states
+      
       this.billingAddressStates = this.shippingAddressStates;
 
     }
     else {
       this.checkoutFormGroup.controls?.['billingAddress'].reset();
 
-      // bug fix for states
+      
       this.billingAddressStates = [];
     }
     
