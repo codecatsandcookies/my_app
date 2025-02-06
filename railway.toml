@@ -1,0 +1,8 @@
+[build]
+# Backend (Spring Boot)
+backend.build = "cd backend/ecommerce-spring-boot && mvn clean package -DskipTests"
+backend.start = "cd backend/ecommerce-spring-boot && java -jar target/ecommerce-spring-boot-0.0.1-SNAPSHOT.jar"
+
+# Frontend (Angular)
+frontend.build = "cd frontend/angular-app && npm install && npm run build"
+frontend.start = "cd frontend/angular-app && npx serve -s dist/angular-app -l 8080"
