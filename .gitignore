@@ -1,0 +1,2 @@
+backend/ecommerce-spring-boot/target/*.jar
+frontend/angular-app/.angular/cache/*
