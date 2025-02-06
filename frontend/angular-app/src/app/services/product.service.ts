@@ -6,10 +6,13 @@ import { map } from 'rxjs/operators';
 import { ProductCategory } from '../common/product-category';
 import { CartItem } from '../common/cart-item';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+
+
 
   private baseUrl = 'http://localhost:8080/api/products';
 
@@ -24,6 +27,8 @@ export class ProductService {
 
     return this.httpClient.get<Product>(productUrl);
   }
+
+  
 
   getProductListPaginate(thePage: number, 
                          thePageSize: number, 
