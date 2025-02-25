@@ -14,9 +14,9 @@ export class ProductService {
 
 
 
-  private baseUrl = 'http://localhost:8080/api/products';
+  private baseUrl = 'http://ecommerce-spring-boot:8080/api/products';
 
-  private categoryUrl = 'http://localhost:8080/api/product-category';
+  private categoryUrl = 'http://ecommerce-spring-boot:8080/api/product-category';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.webapp.ecommerce_spring_boot.EcommerceSpringBootApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.043 s -- in com.webapp.ecommerce_spring_boot.EcommerceSpringBootApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.927 s -- in com.webapp.ecommerce_spring_boot.EcommerceSpringBootApplicationTests

@@ -9,8 +9,8 @@ import { State } from '../common/state';
 })
 export class FormService {
 
-  private countriesUrl = 'http://localhost:8080/api/countries';
-  private statesUrl = 'http://localhost:8080/api/states';
+  private countriesUrl = 'http://ecommerce-spring-boot:8080/api/countries';
+  private statesUrl = 'http://ecommerce-spring-boot:8080/api/states';
 
   constructor(private httpClient: HttpClient) { }
 

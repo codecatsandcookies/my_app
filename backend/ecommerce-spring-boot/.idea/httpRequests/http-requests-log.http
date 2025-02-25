@@ -1,4 +1,4 @@
-GET http://localhost:8080/api/checkout
+GET http://ecommerce-spring-boot:8080/api/checkout
 Content-Type: application/json
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.2
 Accept-Encoding: br, deflate, gzip, x-gzip
@@ -8,7 +8,7 @@ Accept: */*
 
 ###
 
-POST http://localhost:8080/api/checkout
+POST http://ecommerce-spring-boot:8080/api/checkout
 Content-Type: application/json
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.2
 Accept-Encoding: br, deflate, gzip, x-gzip
@@ -19,7 +19,7 @@ content-length: 0
 
 ###
 
-POST http://localhost:8080/api/checkout/purchase
+POST http://ecommerce-spring-boot:8080/api/checkout/purchase
 Content-Type: application/json
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.2
 Accept-Encoding: br, deflate, gzip, x-gzip
@@ -30,7 +30,7 @@ content-length: 0
 
 ###
 
-POST http://localhost:8080/api/checkout
+POST http://ecommerce-spring-boot:8080/api/checkout
 Content-Type: application/json
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.2
 Accept-Encoding: br, deflate, gzip, x-gzip
@@ -41,7 +41,7 @@ content-length: 0
 
 ###
 
-POST http://localhost:8080/api/checkout/purchase
+POST http://ecommerce-spring-boot:8080/api/checkout/purchase
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.2
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
@@ -51,7 +51,7 @@ content-length: 0
 
 ###
 
-POST http://localhost:8080/api/checkout/purchase
+POST http://ecommerce-spring-boot:8080/api/checkout/purchase
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.3.2
 Accept-Encoding: br, deflate, gzip, x-gzip
 Accept: */*
