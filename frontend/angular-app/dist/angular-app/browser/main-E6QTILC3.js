@@ -16886,13 +16886,13 @@ var or = (() => {
     constructor(t) {
       (this.httpClient = t),
         (this.baseUrl =
-          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/products"),
+          "https://ecommerce-spring-boot-production-b949.up.railway.app/api/products"),
         (this.purchaseUrl =
-          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/checkout/purchase"),
+          "https://ecommerce-spring-boot-production-b949.up.railway.app/api/checkout/purchase"),
         (this.cancelOrderUrl =
-          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/checkout/cancelLatestOrder"),
+          "https://ecommerce-spring-boot-production-b949.up.railway.app/api/checkout/cancelLatestOrder"),
         (this.reportsUrl =
-          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/orders/reports");
+          "https://ecommerce-spring-boot-production-b949.up.railway.app/api/orders/reports");
     }
     placeOrder(t) {
       let i = localStorage.getItem("authToken"),
@@ -16927,7 +16927,7 @@ var or = (() => {
     }
     cancelLatestOrder() {
       return this.httpClient.delete(
-        "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/checkout/cancelLatestOrder",
+        "https://ecommerce-spring-boot-production-b949.up.railway.app/api/checkout/cancelLatestOrder",
         { responseType: "text" }
       );
     }
@@ -21138,9 +21138,9 @@ var gr = (() => {
       (this.httpClient = t),
         (this.router = i),
         (this.loginUrl =
-          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/auth/login"),
+          "https://ecommerce-spring-boot-production-b949.up.railway.app/api/auth/login"),
         (this.registerUrl =
-          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/auth/register");
+          "https://ecommerce-spring-boot-production-b949.up.railway.app/api/auth/register");
     }
     login(t, i) {
       return this.httpClient
@@ -21162,7 +21162,7 @@ var gr = (() => {
     }
     register(t, i) {
       return this.httpClient.post(
-        "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/auth/register",
+        "https://ecommerce-spring-boot-production-b949.up.railway.app/api/auth/register",
         { email: t, password: i },
         { observe: "response" }
       );
@@ -21189,9 +21189,9 @@ var Vn = (() => {
     constructor(t) {
       (this.httpClient = t),
         (this.baseUrl =
-          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/products"),
+          "https://ecommerce-spring-boot-production-b949.up.railway.app/api/products"),
         (this.categoryUrl =
-          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/product-category");
+          "https://ecommerce-spring-boot-production-b949.up.railway.app/api/product-category");
     }
     getProduct(t) {
       let i = `${this.baseUrl}/${t}`;
@@ -22078,9 +22078,9 @@ var Qv = (() => {
     constructor(t) {
       (this.httpClient = t),
         (this.countriesUrl =
-          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/countries"),
+          "https://ecommerce-spring-boot-production-b949.up.railway.app/api/countries"),
         (this.statesUrl =
-          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/states");
+          "https://ecommerce-spring-boot-production-b949.up.railway.app/api/states");
     }
     getCountries() {
       return this.httpClient
@@ -23441,7 +23441,7 @@ var Kv = (() => {
     constructor(t) {
       (this.http = t),
         (this.baseUrl =
-          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/orders/reports");
+          "https://ecommerce-spring-boot-production-b949.up.railway.app/api/orders/reports");
     }
     getOrderReports() {
       return this.http.get(this.baseUrl);

@@ -7,8 +7,8 @@ import { catchError, Observable, tap, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private loginUrl = 'https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/auth/login';
-  private registerUrl = 'https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/auth/register';
+  private loginUrl = 'https://ecommerce-spring-boot-production-b949.up.railway.app/api/auth/login';
+  private registerUrl = 'https://ecommerce-spring-boot-production-b949.up.railway.app/api/auth/register';
 
   constructor(private httpClient: HttpClient, private router: Router) {}
 
@@ -30,7 +30,7 @@ export class AuthService {
   }
 
   register(email: string, password: string) {
-    return this.httpClient.post<{ message: string }>('https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/auth/register', {
+    return this.httpClient.post<{ message: string }>('https://ecommerce-spring-boot-production-b949.up.railway.app/api/auth/register', {
       email,
       password
     }, { observe: 'response' }); 
