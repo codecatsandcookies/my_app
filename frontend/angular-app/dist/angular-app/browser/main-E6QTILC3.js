@@ -16885,13 +16885,14 @@ var or = (() => {
   class e {
     constructor(t) {
       (this.httpClient = t),
-        (this.baseUrl = "http://ecommerce-spring-boot:8080/api/products"),
+        (this.baseUrl =
+          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/products"),
         (this.purchaseUrl =
-          "http://ecommerce-spring-boot:8080/api/checkout/purchase"),
+          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/checkout/purchase"),
         (this.cancelOrderUrl =
-          "http://ecommerce-spring-boot:8080/api/checkout/cancelLatestOrder"),
+          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/checkout/cancelLatestOrder"),
         (this.reportsUrl =
-          "http://ecommerce-spring-boot:8080/api/orders/reports");
+          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/orders/reports");
     }
     placeOrder(t) {
       let i = localStorage.getItem("authToken"),
@@ -16919,16 +16920,14 @@ var or = (() => {
     updateProductStock(t, i) {
       let r = `${this.baseUrl}/updateStock/${t}`,
         o = new Pt({ "Content-Type": "application/json" });
-      this.httpClient
-        .put(r, { quantity: i }, { headers: o })
-        .subscribe({
-          next: () => console.log(`Stock updated for product ID: ${t}`),
-          error: (s) => console.error(`Failed to update stock: ${s}`),
-        });
+      this.httpClient.put(r, { quantity: i }, { headers: o }).subscribe({
+        next: () => console.log(`Stock updated for product ID: ${t}`),
+        error: (s) => console.error(`Failed to update stock: ${s}`),
+      });
     }
     cancelLatestOrder() {
       return this.httpClient.delete(
-        "http://ecommerce-spring-boot:8080/api/checkout/cancelLatestOrder",
+        "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/checkout/cancelLatestOrder",
         { responseType: "text" }
       );
     }
@@ -21138,9 +21137,10 @@ var gr = (() => {
     constructor(t, i) {
       (this.httpClient = t),
         (this.router = i),
-        (this.loginUrl = "http://ecommerce-spring-boot:8080/api/auth/login"),
+        (this.loginUrl =
+          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/auth/login"),
         (this.registerUrl =
-          "http://ecommerce-spring-boot:8080/api/auth/register");
+          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/auth/register");
     }
     login(t, i) {
       return this.httpClient
@@ -21162,7 +21162,7 @@ var gr = (() => {
     }
     register(t, i) {
       return this.httpClient.post(
-        "http://ecommerce-spring-boot:8080/api/auth/register",
+        "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/auth/register",
         { email: t, password: i },
         { observe: "response" }
       );
@@ -21188,9 +21188,10 @@ var Vn = (() => {
   class e {
     constructor(t) {
       (this.httpClient = t),
-        (this.baseUrl = "http://ecommerce-spring-boot:8080/api/products"),
+        (this.baseUrl =
+          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/products"),
         (this.categoryUrl =
-          "http://ecommerce-spring-boot:8080/api/product-category");
+          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/product-category");
     }
     getProduct(t) {
       let i = `${this.baseUrl}/${t}`;
@@ -22076,8 +22077,10 @@ var Qv = (() => {
   class e {
     constructor(t) {
       (this.httpClient = t),
-        (this.countriesUrl = "http://ecommerce-spring-boot:8080/api/countries"),
-        (this.statesUrl = "http://ecommerce-spring-boot:8080/api/states");
+        (this.countriesUrl =
+          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/countries"),
+        (this.statesUrl =
+          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/states");
     }
     getCountries() {
       return this.httpClient
@@ -23437,7 +23440,8 @@ var Kv = (() => {
   class e {
     constructor(t) {
       (this.http = t),
-        (this.baseUrl = "http://ecommerce-spring-boot:8080/api/orders/reports");
+        (this.baseUrl =
+          "https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/orders/reports");
     }
     getOrderReports() {
       return this.http.get(this.baseUrl);

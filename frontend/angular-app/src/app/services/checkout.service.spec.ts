@@ -35,11 +35,11 @@
 //       expect(response).toEqual(mockResponse);
 //     });
 
-//     const req = httpMock.expectOne('http://ecommerce-spring-boot:8080/api/checkout/purchase');
+//     const req = httpMock.expectOne('https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/checkout/purchase');
 //     expect(req.request.method).toBe('POST');
 //     req.flush(mockResponse);
 
-//     httpMock.expectOne('http://ecommerce-spring-boot:8080/api/products/updateStock/1').flush({});
+//     httpMock.expectOne('https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/products/updateStock/1').flush({});
 //   });
 
 //   it('should return an error when checkout fails', () => {
@@ -58,7 +58,7 @@
 //       }
 //     );
 
-//     const req = httpMock.expectOne('http://ecommerce-spring-boot:8080/api/checkout/purchase');
+//     const req = httpMock.expectOne('https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/checkout/purchase');
 //     req.flush({ message: 'Checkout failed' }, { status: 500, statusText: 'Internal Server Error' });
 //   });
 // });

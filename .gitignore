@@ -1,4 +1,4 @@
-backend/http://ecommerce-spring-boot/target/*.jar
+backend/ecommerce-spring-boot/target/*.jar
 frontend/angular-app/.angular/cache/*
-backend/http://ecommerce-spring-boot/target/*.jar
+backend/ecommerce-spring-boot/target/*.jar
 frontend/angular-app/.angular/cache/*

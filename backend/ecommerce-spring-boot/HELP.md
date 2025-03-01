@@ -2,7 +2,7 @@
 
 The following was discovered as part of building this project:
 
-- The original package name 'com.webapp.http://ecommerce-spring-boot' is invalid and this project uses 'com.webapp.ecommerce_spring_boot' instead.
+- The original package name 'com.webapp.https://ecommerce-spring-boot-production-95e6.up.railway.app' is invalid and this project uses 'com.webapp.ecommerce_spring_boot' instead.
 
 # Getting Started
 

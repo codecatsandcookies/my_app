@@ -9,10 +9,10 @@ import { PurchaseResponse } from '../common/purchase-response';
 })
 export class CheckoutService {
 
-  private baseUrl = 'http://ecommerce-spring-boot:8080/api/products'
-  private purchaseUrl = 'http://ecommerce-spring-boot:8080/api/checkout/purchase';
-  private cancelOrderUrl = 'http://ecommerce-spring-boot:8080/api/checkout/cancelLatestOrder';
-  private reportsUrl = 'http://ecommerce-spring-boot:8080/api/orders/reports';
+  private baseUrl = 'https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/products'
+  private purchaseUrl = 'https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/checkout/purchase';
+  private cancelOrderUrl = 'https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/checkout/cancelLatestOrder';
+  private reportsUrl = 'https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/orders/reports';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -53,7 +53,7 @@ export class CheckoutService {
   }
 
   cancelLatestOrder(): Observable<string> {
-    return this.httpClient.delete<string>('http://ecommerce-spring-boot:8080/api/checkout/cancelLatestOrder', { responseType: 'text' as 'json' });
+    return this.httpClient.delete<string>('https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/checkout/cancelLatestOrder', { responseType: 'text' as 'json' });
   }
 
   getOrderReports(): Observable<any> {

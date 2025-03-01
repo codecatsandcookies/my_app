@@ -31,7 +31,7 @@ describe('AuthService', () => {
     });
 
     
-    const req = httpMock.expectOne('http://ecommerce-spring-boot:8080/api/auth/login');
+    const req = httpMock.expectOne('https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/auth/login');
     expect(req.request.method).toBe('POST');
     expect(req.request.body).toEqual({ email, password });
 

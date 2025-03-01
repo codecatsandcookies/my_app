@@ -68,7 +68,7 @@
     &quot;Spring Boot.EcommerceSpringBootApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;working__branch&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/myfolder/web_app/backend/http://ecommerce-spring-boot&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/myfolder/web_app/backend/ecommerce-spring-boot&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -94,7 +94,7 @@
       <method v="2" />
     </configuration>
     <configuration name="EcommerceSpringBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="http://ecommerce-spring-boot" />
+      <module name="ecommerce-spring-boot" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.webapp.ecommerce_spring_boot.EcommerceSpringBootApplication" />
       <method v="2">
         <option name="Make" enabled="true" />

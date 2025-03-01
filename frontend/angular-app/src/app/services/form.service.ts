@@ -9,8 +9,8 @@ import { State } from '../common/state';
 })
 export class FormService {
 
-  private countriesUrl = 'http://ecommerce-spring-boot:8080/api/countries';
-  private statesUrl = 'http://ecommerce-spring-boot:8080/api/states';
+  private countriesUrl = 'https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/countries';
+  private statesUrl = 'https://ecommerce-spring-boot-production-95e6.up.railway.app:8080/api/states';
 
   constructor(private httpClient: HttpClient) { }
 
